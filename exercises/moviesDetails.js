@@ -18,26 +18,31 @@ module.exports.run = function(movies) {
 
 	Write your code below the comment.
 */
-    moviesInfo = []
+    // moviesInfo = []
 
-    const addMovieObj = (obj) => {
-        moviesInfo.push(obj)
-        console.log(moviesInfo)
-    }
+    // const addMovieObj = (obj) => {
+    //     moviesInfo.push(obj)
+    //     console.log(moviesInfo)
+    // }
 
-    movies.map( async url => {
-        let result = await Axios.get(url)
-        .then( res => {
-            movieInfo = res.data
-            newObj = {
-                'Title': movieInfo.Title,
-                'Year': movieInfo.Year,
-                'Genre': movieInfo.Genre
-            }
-            return newObj
-        })
-        .then(addMovieObj)
-    })
-    // console.log(moviesInfo)
-    return moviesInfo
+    // const async fetchMovieData = (url) => {
+    //     const response = await Axios.get(url)
+    //     const data = 
+    // }
+
+    // movies = movies.map(url => {
+    //     return promise = Axios.get(url)
+    //     .then(res => {
+    //         movieInfo = res.data
+    //         newObj = {
+    //             'Title': movieInfo.Title,
+    //             'Year': movieInfo.Year,
+    //             'Genre': movieInfo.Genre
+    //         }
+    //         console.log(newObj)
+    //         return newObj
+    //     })
+    // })
+    // movies.map( movie => movie.then(addMovieObj))
+    // return moviesInfo
 };

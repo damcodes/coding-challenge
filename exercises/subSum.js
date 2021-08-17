@@ -11,11 +11,17 @@ module.exports.run = function(x, y) {
 
 	 Write your code below the comment.
 */
-const twoDArray = [[0,  4,  2,  1],
-		   [3, -1,  1,  0],
-		   [0,  0,  2,  3],
-		   [1,  3, -3,  0]];
-
+    const twoDArray = [ [0,  4,  2,  1],
+		                [3, -1,  1,  0],
+		                [0,  0,  2,  3],
+		                [1,  3, -3,  0]];
+    sum = 0;
+    for (let i=0; i <= y; i++) {
+        for (let j=0; j <= x; j++) {
+            sum += twoDArray[i][j];
+        };
+    };
+    return sum;
 };
 
 

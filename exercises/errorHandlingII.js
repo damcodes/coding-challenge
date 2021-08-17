@@ -13,6 +13,6 @@ module.exports.run = function(url){
     let promise = Axios.get(url)
     .catch( err => {
         return `Error: ${err.message}`
-    })
-    return promise
+    });
+    return promise;
 };

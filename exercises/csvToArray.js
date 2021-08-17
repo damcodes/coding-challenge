@@ -17,15 +17,15 @@ module.exports.run = function(csv){
 
 	Write your code below the comment.
 */
-    data = csv.split('/n')
-    propertyNames = data.shift().split(',')
+    data = csv.split('/n');
+    propertyNames = data.shift().split(',');
         
     return data.map( (info) => {
-        newObj = {}
-        subdata = info.split(',')
+        newObj = {};
+        subdata = info.split(',');
         propertyNames.map( (property, i) => {
-            newObj[property] = subdata[i]
-        })
-        return newObj
-    })
+            newObj[property] = subdata[i];
+        });
+        return newObj;
+    });
 };
