@@ -9,7 +9,7 @@ Return true if all the g's in the given string are happy, otherwise return false
 
         Write your code below the comment.
 */
-    isHappy = true;
+    let isHappy = true;
     if (str[0] === 'g' && str[1] !== 'g') isHappy = false;
     for (let i=1; i<str.length; i++) {
         if (str[i] === 'g' && !(str[i-1] === 'g' || str[i+1] === 'g')) {

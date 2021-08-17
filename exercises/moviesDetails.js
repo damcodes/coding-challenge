@@ -1,6 +1,6 @@
 const { default: Axios } = require("axios");
 
-module.exports.run = function(movies) {
+module.exports.run = async function(movies) {
 /*
 	You are given a list of urls that will be used to search up movies.
 	Make a GET call with axios using the given urls to search each movies.
@@ -18,31 +18,12 @@ module.exports.run = function(movies) {
 
 	Write your code below the comment.
 */
-    // moviesInfo = []
-
-    // const addMovieObj = (obj) => {
-    //     moviesInfo.push(obj)
-    //     console.log(moviesInfo)
-    // }
-
-    // const async fetchMovieData = (url) => {
-    //     const response = await Axios.get(url)
-    //     const data = 
-    // }
-
-    // movies = movies.map(url => {
-    //     return promise = Axios.get(url)
-    //     .then(res => {
-    //         movieInfo = res.data
-    //         newObj = {
-    //             'Title': movieInfo.Title,
-    //             'Year': movieInfo.Year,
-    //             'Genre': movieInfo.Genre
-    //         }
-    //         console.log(newObj)
-    //         return newObj
-    //     })
-    // })
-    // movies.map( movie => movie.then(addMovieObj))
-    // return moviesInfo
+    moviesArr = [];
+    for (let i=0; i<movies.length; i++) {
+        const response = await Axios.get(movies[i]);
+        const movieObj = response.data; 
+        let reducedMovieObj = (({Title, Year, Genre}) => ({Title, Year, Genre}))(movieObj);
+        moviesArr = [...moviesArr, reducedMovieObj];
+    }
+    return moviesArr;
 };
