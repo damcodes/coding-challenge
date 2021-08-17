@@ -10,9 +10,9 @@ module.exports.run = function(url){
 
 	Write your code below the comment.
 */
-    let result = Axios.get(url)
+    let promise = Axios.get(url)
     .catch( err => {
         return `Error: ${err.message}`
     })
-    return result
+    return promise
 };

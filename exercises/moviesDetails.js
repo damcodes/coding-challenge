@@ -18,5 +18,26 @@ module.exports.run = function(movies) {
 
 	Write your code below the comment.
 */
+    moviesInfo = []
 
+    const addMovieObj = (obj) => {
+        moviesInfo.push(obj)
+        console.log(moviesInfo)
+    }
+
+    movies.map( async url => {
+        let result = await Axios.get(url)
+        .then( res => {
+            movieInfo = res.data
+            newObj = {
+                'Title': movieInfo.Title,
+                'Year': movieInfo.Year,
+                'Genre': movieInfo.Genre
+            }
+            return newObj
+        })
+        .then(addMovieObj)
+    })
+    // console.log(moviesInfo)
+    return moviesInfo
 };
