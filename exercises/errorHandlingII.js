@@ -1,3 +1,5 @@
+const { default: Axios } = require("axios");
+
 module.exports.run = function(url){
 /*
 	You are given a url. Make a GET call with axios using the given url.
@@ -8,9 +10,9 @@ module.exports.run = function(url){
 
 	Write your code below the comment.
 */
-    try {
-
-    } catch {
-        
-    }
+    let result = Axios.get(url)
+    .catch( err => {
+        return `Error: ${err.message}`
+    })
+    return result
 };

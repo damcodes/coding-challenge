@@ -1,3 +1,5 @@
+const { default: Axios } = require("axios");
+
 module.exports.run = function(movies) {
 /*
 	You are given a list of urls that will be used to search up movies.
