@@ -10,7 +10,8 @@ Examples:
 Write your code below the comment.
 
 */
-    uniqueSet = new Set([a, b, c])
-    uniqueArr = Array.from(uniqueSet)
-    return uniqueArr.reduce( (a, b) => a + b)
+    const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0)
+    arr = [a,b,c]
+    uniqueOnly = arr.filter( val => countOccurrences(arr, val) === 1)
+    return uniqueOnly.length > 0 ? uniqueOnly.reduce( (a, b) => a + b) : 0
 };
