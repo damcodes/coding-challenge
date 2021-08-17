@@ -10,5 +10,7 @@ Examples:
 Write your code below the comment.
 
 */
-
+    uniqueSet = new Set([a, b, c])
+    uniqueArr = Array.from(uniqueSet)
+    return uniqueArr.reduce( (a, b) => a + b)
 };

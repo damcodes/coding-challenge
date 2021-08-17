@@ -1,3 +1,5 @@
+const { first } = require("lodash");
+
 module.exports.run = function(csv){
 /*
 	A stringified CSV file will be passed into this function.
@@ -15,5 +17,19 @@ module.exports.run = function(csv){
 
 	Write your code below the comment.
 */
+        data = csv.split('/n')
+        propertyNames = data.shift().split()
+        // console.log(data)
+        // console.log(propertyNames)
+        
+        return data.map( (info, i) => {
+            subdata = info.split('/n')
+            // console.log(subdata)
+            return {
+                FirstName: firstName,
+                LastName: lastName,
+                Age: age
+            }
+        })
 
 };
